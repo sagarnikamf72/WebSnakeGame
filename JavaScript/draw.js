@@ -1,4 +1,4 @@
-var map, snake, fruit, player, rows, columns, rotateFactor = 1, GameSpeed = 150, changeDirection;
+var map, snake, fruit, player, rows, columns, rotateFactor = 1, GameSpeed = 160, changeDirection, factor;
 var colors4 = ["#492378", "#5E2C99", "#7638C2", "#8C43E6", "#9C4AFF"];
 var colors3 = ["#F982BC", "#DB72DA", "#D68AF2", "#A372DB", "#9882F9"];
 var colors2 = ["#0DF049", "#38F063", "#58DB6F", "#73E07A", "#9CEB92"]
@@ -18,6 +18,16 @@ function validateAndStartGame() {
 function setup(PlayerName){
     document.getElementById("box").style.display = "none";
     document.getElementById("result").style.display = "none";
+    let level = document.getElementById("lev").value;
+    if(level == "Easy") {
+        factor = 7;
+    }
+    else if(level == "Medium"){
+        factor = 4;
+    }
+    else {
+        factor = 1;
+    }
     map = new Map();
     snake = new Snake();
     player = new Player(PlayerName);

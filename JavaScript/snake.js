@@ -78,7 +78,7 @@ class Snake{
     eatFruit() {
         if(this.occupied[0][0] == fruit.x && this.occupied[0][1] == fruit.y) {
             this.occupied.push([0, 0, colors[(player.score % colors.length)]]);
-            if(player.score%1 === 0) GameSpeed -= 5;
+            if(player.score%factor === 0) GameSpeed -= 5;
             return true;
         }
         return false;

@@ -1,0 +1,32 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-image: url("../Images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+img {
+    width: 30px; 
+    height: 30px; 
+    display: none;
+}
+
+p {
+    text-align: center;
+    color: greenyellow;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    font-style: normal;
+}
+
+#box {
+    position: absolute; 
+    bottom: 50px;
+    padding-left: 30vw;
+}
+
+.input {
+    height: 30px;
+}

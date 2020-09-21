@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<img src="Images/fruit.png" alt="Image not found" id="fruit">
+<img src="Images/snakeFaceLeft.jpeg" alt="Image not found" id="snakeHeadLeft">
+<img src="Images/snakeFaceRight.jpeg" alt="Image not found" id="snakeHeadRight">
+<img src="Images/snakeFaceUp.jpeg" alt="Image not found" id="snakeHeadUp">
+<img src="Images/snakeFaceDown.jpeg" alt="Image not found" id="snakeHeadDown">
+<img src="Images/snakeBodyLeft.jpeg" alt="Image not found" id="snakeBodyLeft">
+<img src="Images/snakeBodyRight.jpeg" alt="Image not found" id="snakeBodyRight">
+<img src="Images/snakeBodyUp.jpeg" alt="Image not found" id="snakeBodyUp">
+<img src="Images/snakeBodyDown.jpeg" alt="Image not found" id="snakeBodyDown">
+<img src="Images/snakeTailLeft.jpeg" alt="Image not found" id="snakeTailLeft">
+<img src="Images/snakeTailRight.jpeg" alt="Image not found" id="snakeTailRight">
+<img src="Images/snakeTailUp.jpeg" alt="Image not found" id="snakeTailUp">
+<img src="Images/snakeTailDown.jpeg" alt="Image not found" id="snakeTailDown">
+
+<div id="box">
+    <input class="input" type="text" placeholder="Enter Your Name" id="Name">
+    <button class="input" onclick="validateAndStartGame()">Start Game</button>
+</div>
+
+<p id="result"></p>
+
+<canvas id="myCanvas" style = "background-color: #6B46EB; border: 15px solid #000A80; display: none; margin: auto"></canvas>
+<script src="JavaScript/map.js"></script>
+<script src="JavaScript/snake.js"></script>
+<script src="JavaScript/player.js"></script>
+<script src="JavaScript/fruit.js"></script>
+<script src="JavaScript/draw.js"></script>
+</body>
+</html>

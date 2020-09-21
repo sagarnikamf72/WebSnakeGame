@@ -22,13 +22,19 @@
 <img src="Images/snakeTailDown.jpeg" alt="Image not found" id="snakeTailDown">
 
 <div id="box">
+    <label for="Level">Choose a Level:</label>
+    <select id="lev" name="Level" id="Level" required >
+    <option value="Easy">Easy</option>
+    <option value="Medium">Medium</option>
+    <option value="Hard">Hard</option>
+    </select>
     <input class="input" type="text" placeholder="Enter Your Name" id="Name">
     <button class="input" onclick="validateAndStartGame()">Start Game</button>
 </div>
 
 <p id="result"></p>
 
-<canvas id="myCanvas" style = "background-color: #6B46EB; border: 15px solid #000A80; display: none; margin: auto"></canvas>
+<canvas id="myCanvas" style = "background-color: #6B46EB; border: 10px solid #000A80; display: none; margin: auto"></canvas>
 <script src="JavaScript/map.js"></script>
 <script src="JavaScript/snake.js"></script>
 <script src="JavaScript/player.js"></script>

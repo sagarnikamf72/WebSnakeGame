@@ -1,4 +1,4 @@
-var map, snake, fruit, player, rows, columns, rotateFactor = 1, GameSpeed = 150;
+var map, snake, fruit, player, rows, columns, rotateFactor = 1, GameSpeed = 160, changeDirection, factor;
 var colors4 = ["#492378", "#5E2C99", "#7638C2", "#8C43E6", "#9C4AFF"];
 var colors3 = ["#F982BC", "#DB72DA", "#D68AF2", "#A372DB", "#9882F9"];
 var colors2 = ["#0DF049", "#38F063", "#58DB6F", "#73E07A", "#9CEB92"]
@@ -18,6 +18,16 @@ function validateAndStartGame() {
 function setup(PlayerName){
     document.getElementById("box").style.display = "none";
     document.getElementById("result").style.display = "none";
+    let level = document.getElementById("lev").value;
+    if(level == "Easy") {
+        factor = 7;
+    }
+    else if(level == "Medium"){
+        factor = 4;
+    }
+    else {
+        factor = 1;
+    }
     map = new Map();
     snake = new Snake();
     player = new Player(PlayerName);
@@ -29,15 +39,10 @@ function setup(PlayerName){
 
 function draw() {
     // Response to key presses
-    let changeDirection = true;
-    window.addEventListener("keydown", (event) => {
-        if(changeDirection === true) {
-            changeDirection = false;
-            let newDirection = event.key.replace("Arrow", "");
-            snake.changeDirection(newDirection);
-        }
-    });
-
+    changeDirection = true;
+    window.addEventListener("keydown", callBack1(event));
+    window.addEventListener("click", callBack2(event));
+    changeDirection = true;
     // Drawing game's current frame
     map.draw();
     snake.changePosition();
@@ -66,4 +71,40 @@ function GameOver()  {
     document.getElementById("Name").innerHTML = player.name;
     document.getElementById("result").style.display = "block";
     document.getElementById("result").innerHTML = result;
+    window.removeEventListener("keydown", callBack1(event));
+    window.removeEventListener("click", callBack2(event)); 
+}
+function callBack1(event) {
+    return function changeDirectionByKeyboard(event) {
+        if(changeDirection === true) {
+            changeDirection = false;
+            let newDirection = event.key.replace("Arrow", "");
+            snake.changeDirection(newDirection);
+        }
+    }
+}
+
+function callBack2(event) {
+    return function changeDirectionByMouse(event) {
+        if(changeDirection === true) {
+            changeDirection = false;
+            let mouseX = event.offsetX, mouseY = event.offsetY;
+            mouseX = mouseX/map.scale; mouseY = mouseY/map.scale;
+            let newDirection;
+            if(mouseX >= 15) {
+                newDirection = "Right";
+            }
+            else if(mouseX <= 5) {
+                newDirection = "Left";
+            }
+            else if(mouseX > 5 && mouseX < 15 && mouseY <= 5) {
+                newDirection = "Up";
+            }
+            if(mouseX > 5 && mouseX < 15 && mouseY > 15)  {
+                newDirection = "Down";
+            }
+            console.log(mouseX + " " + mouseY);
+            snake.changeDirection(newDirection);
+        }
+    }
 }

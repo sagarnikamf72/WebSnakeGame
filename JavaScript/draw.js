@@ -1,4 +1,4 @@
-var map, snake, fruit, player, rows, columns, rotateFactor = 1;
+var map, snake, fruit, player, rows, columns, rotateFactor = 1, GameSpeed = 150;
 var colors4 = ["#492378", "#5E2C99", "#7638C2", "#8C43E6", "#9C4AFF"];
 var colors3 = ["#F982BC", "#DB72DA", "#D68AF2", "#A372DB", "#9882F9"];
 var colors2 = ["#0DF049", "#38F063", "#58DB6F", "#73E07A", "#9CEB92"]
@@ -54,7 +54,7 @@ function draw() {
         return ;
     }
     fruit.displayFruit();
-    setTimeout(draw, 150);
+    setTimeout(draw, GameSpeed);
     return ;  
 }
 

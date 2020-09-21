@@ -1,6 +1,8 @@
 var map, snake, fruit, player, rows, columns, rotateFactor = 1;
-var colors2 = ["#F982BC", "#DB72DA", "#D68AF2", "#A372DB", "#9882F9"];
-var colors = ["#0DF049", "#38F063", "#58DB6F", "#73E07A", "#9CEB92"]
+var colors4 = ["#492378", "#5E2C99", "#7638C2", "#8C43E6", "#9C4AFF"];
+var colors3 = ["#F982BC", "#DB72DA", "#D68AF2", "#A372DB", "#9882F9"];
+var colors2 = ["#0DF049", "#38F063", "#58DB6F", "#73E07A", "#9CEB92"]
+var colors = ["#d23be7", "#4355db", "#34bbe6", "#49da9a", "#a3e048", "#f7d038", "#eb7532", "#e6261f"];
 
 
 function validateAndStartGame() {

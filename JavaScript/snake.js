@@ -7,7 +7,6 @@ class Snake{
         this.draw();
     }
     draw() {
-        console.log(this.occupied.length);
         for(let cell = 1; cell < this.occupied.length; cell++) {
             map.ctx.fillStyle = this.occupied[cell][2];
             map.ctx.fillRect(this.occupied[cell][0]*map.scale, this.occupied[cell][1]*map.scale, map.scale, map.scale);
@@ -62,7 +61,7 @@ class Snake{
             return true;
         }
         // Right and Bottom bound check
-        if((this.occupied[0][0]+1)*map.scale > map.canvas.width || (this.occupied[0][1]+1)*map.scale > map.canvas.height) {
+        if((this.occupied[0][0] + 1)*map.scale > map.canvas.width || (this.occupied[0][1] + 1)*map.scale > map.canvas.height) {
             return true;
         }
 

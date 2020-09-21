@@ -3,9 +3,9 @@ class Map{
         this.canvas = document.getElementById("myCanvas");
         this.ctx = this.canvas.getContext("2d");
         this.canvas.style.display = "block";
-        this.scale = 30;
-        this.canvas.width = 600;
-        this.canvas.height = 600;
+        this.canvas.width = Math.min(600, window.innerWidth-20);
+        this.canvas.height = Math.min(600, window.innerWidth-20);
+        this.scale = Math.max(Math.ceil(Math.min(this.canvas.width, this.canvas.height)/20), 10);
         // this.canvas.width = window.innerWidth - 40;
         // this.canvas.height = window.innerHeight - 40;
         this.draw();
